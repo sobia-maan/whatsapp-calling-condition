@@ -18,3 +18,12 @@
                       Accept Offer
                     </a>
                   </div>
+
+//////AJAX PART
+
+
+const isMobile = /android|iphone|ipad|ipod/i.test(navigator.userAgent);
+const whatsappBase = isMobile ? 'https://api.whatsapp.com/send' : 'https://web.whatsapp.com/send';
+const phone = driver.phone.replace(/\D/g, '');
+const message = encodeURIComponent('Hi, You Are Hired!');
+const whatsappUrl = `${whatsappBase}?phone=${phone}&text=${message}`;
